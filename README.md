@@ -1,7 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-音频来源：https://pixabay.com/zh/
-
 ## Getting Started
 
 First, run the development server:

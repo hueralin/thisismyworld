@@ -13,9 +13,9 @@ export function Header() {
         <nav className="flex items-center space-x-6 text-sm font-medium">
           <Link href="/rain" className="transition-colors hover:text-foreground/80">雨声</Link>
         </nav>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        {/* <div className="flex flex-1 items-center justify-end space-x-4">
           <ModeToggle />
-        </div>
+        </div> */}
       </div>
     </header>
   )

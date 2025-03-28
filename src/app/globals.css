@@ -1,13 +1,21 @@
+/* 导入 Tailwind CSS 和动画库 */
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* 定义暗色模式变体 */
 @custom-variant dark (&:is(.dark *));
 
+/* 定义内联主题变量 */
 @theme inline {
+  /* 基础颜色变量 */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* 字体变量 */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* 侧边栏相关变量 */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -16,11 +24,15 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  
+  /* 图表颜色变量 */
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  
+  /* UI 元素颜色变量 */
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -37,86 +49,145 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  
+  /* 圆角大小变量 */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* 亮色模式（默认）主题变量 */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.33 0.07 142.493);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* 基础圆角设置 */
+  --radius: 0.2rem;
+  
+  /* 基础颜色 - 象牙白色背景营造阳光氛围 */
+  --background: rgb(255, 255, 245);
+  --foreground: rgb(51, 51, 51);
+  
+  /* 卡片相关颜色 - 温暖的阳光色调 */
+  --card: rgb(255, 250, 240);
+  --card-foreground: rgb(51, 51, 51);
+  
+  /* 弹出层相关颜色 */
+  --popover: rgb(255, 250, 240);
+  --popover-foreground: rgb(51, 51, 51);
+  
+  /* 主要和次要颜色 - 使用温暖的阳光色调 */
+  --primary: rgb(255, 165, 0);
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(255, 200, 61);
+  --secondary-foreground: rgb(51, 51, 51);
+  
+  /* 静音和强调色 - 温暖的米色系 */
+  --muted: rgb(245, 245, 220);
+  --muted-foreground: rgb(153, 153, 153);
+  --accent: rgb(255, 165, 0);
+  --accent-foreground: rgb(51, 51, 51);
+  
+  /* 功能性颜色 */
+  --destructive: rgb(220, 53, 69);
+  --border: rgb(235, 235, 235);
+  --input: rgb(235, 235, 235);
+  --ring: rgb(181, 181, 181);
+  
+  /* 图表颜色 */
+  --chart-1: rgb(165, 56, 96);
+  --chart-2: rgb(153, 153, 255);
+  --chart-3: rgb(102, 102, 255);
+  --chart-4: rgb(211, 48, 48);
+  --chart-5: rgb(196, 48, 43);
+  
+  /* 侧边栏相关颜色 */
+  --sidebar: rgb(251, 251, 251);
+  --sidebar-foreground: rgb(37, 37, 37);
+  --sidebar-primary: rgb(52, 52, 52);
+  --sidebar-primary-foreground: rgb(255, 255, 255);
+  --sidebar-accent: rgb(247, 247, 247);
+  --sidebar-accent-foreground: rgb(52, 52, 52);
+  --sidebar-border: rgb(235, 235, 235);
+  --sidebar-ring: rgb(181, 181, 181);
 }
 
+/* 暗色模式主题变量 */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.33 0.07 142.493);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* 基础颜色 - 星空蓝色背景 */
+  --background: rgb(16, 31, 48);
+  --foreground: rgb(255, 255, 255);
+  
+  /* 卡片相关颜色 - 温暖的木质色调 */
+  --card: rgb(205, 170, 125);
+  --card-foreground: rgb(75, 35, 25);
+  
+  /* 弹出层相关颜色 */
+  --popover: rgb(255, 250, 240);
+  --popover-foreground: rgb(51, 51, 51);
+  
+  /* 主要和次要颜色 - 暗色调的酱色和琥珀色 */
+  --primary: rgb(167, 49, 33);
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(155, 68, 0);
+  --secondary-foreground: rgb(255, 255, 255);
+  
+  /* 静音和强调色 - 深赭石色系 */
+  --muted: rgb(89, 38, 32);
+  --muted-foreground: rgb(202, 105, 36);
+  --accent: rgb(155, 68, 0);
+  --accent-foreground: rgb(255, 255, 255);
+  
+  /* 功能性颜色 */
+  --destructive: rgb(220, 53, 69);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: rgb(142, 142, 142);
+  
+  /* 图表颜色 */
+  --chart-1: rgb(165, 56, 96);
+  --chart-2: rgb(153, 153, 255);
+  --chart-3: rgb(102, 102, 255);
+  --chart-4: rgb(211, 48, 48);
+  --chart-5: rgb(196, 48, 43);
+  
+  /* 侧边栏相关颜色 */
+  --sidebar: rgb(52, 52, 52);
+  --sidebar-foreground: rgb(255, 255, 255);
+  --sidebar-primary: rgb(165, 56, 96);
+  --sidebar-primary-foreground: rgb(255, 255, 255);
+  --sidebar-accent: rgb(69, 69, 69);
+  --sidebar-accent-foreground: rgb(255, 255, 255);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgb(142, 142, 142);
 }
 
+/* 基础层样式 */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .card {
+    @apply bg-card text-card-foreground rounded-lg;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .dark .card {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"), linear-gradient(to bottom right, rgba(205, 170, 125, 0.1), rgba(75, 35, 25, 0.1));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(205, 170, 125, 0.2);
+  }
+  .dark .card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(205, 170, 125, 0.3);
   }
 }

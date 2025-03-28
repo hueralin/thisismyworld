@@ -1,11 +1,13 @@
 .audio-player {
+  display: flex;
   width: 100%;
   height: 36px;
   background-color: transparent;
 }
 
 .audio-player::-webkit-media-controls-timeline {
-  display: none !important;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .audio-player::-webkit-media-controls-current-time-display,
